@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { NewsContext } from "../NewsContext";
 import NewsArticle from "./NewsArticle";
+import SimpleBackdrop from "./Backdrop"
+
 
 function News(props) {
   const { data } = useContext(NewsContext);
@@ -14,7 +16,7 @@ function News(props) {
           ? data.articles.map((news) => (
               <NewsArticle data={news} key={news.url} />
             ))
-          : "Loading"}
+          : <SimpleBackdrop />}
       </div>
     </div>
   );
